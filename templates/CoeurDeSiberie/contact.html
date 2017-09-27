@@ -1,0 +1,58 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}{% load static %}
+
+{% block page_title %}{% trans 'Contact' %}{% endblock %}
+
+{% block content %}
+<article class="services">
+			<div class="container">
+			
+				<div class="row">
+					<div class="col-xs-12"><h2 class="header">{% trans 'Contact' %}</h2></div>
+				</div>
+			
+				<div class="row service first">
+					<div class="col-xs-8">
+                        {% if messages %}
+                           <div class="alert">
+                              {% for message in messages %}
+                                <button type="button" class="close" data-dismiss="alert alert-info">&times;</button>
+                                {% if message.tags %}<strong>{{ message.tags }}!</strong>{% endif %}
+                                    {{ message }}
+                                {% endfor %}
+                           </div>
+                        {% endif %}
+						<form class="form-inline" role="form" id="contact-form" action="{% url 'contact' %}" method="POST" accept-charset="utf-8">
+						<div class="form-group pull-left">
+							<label class="sr-only" for="name">{% trans 'Nom complet' %}</label>
+							<input type="text" class="form-control" id="name" placeholder="{% trans 'Nom complet' %}" name="name">
+						</div>
+
+						<div class="form-group pull-right">
+							<label class="sr-only" for="email">Email</label>
+							<input type="email" class="form-control" id="email" placeholder="Email" name="email">
+						</div>
+
+						<textarea class="form-control pull-left" rows="8" name="message" >{% trans 'Message' %}</textarea>
+
+						<input type="submit" class="btn btn-default pull-right" value="{% trans 'Envoyer' %}">
+					</form>
+				</div>
+                    <div class="col-xs-4">
+                        <strong>David Neuhaus</strong><br />
+                        +41 (0)79 458 94 65 <br />
+                        (Auch deutschsprachig)<br /><br />
+
+                        <strong>Sabrina Neuhaus</strong><br />
+                        +41 (0)79 573 67 76<br /><br />
+
+                        <strong>Adresse</strong><br />
+                        Rte du Vernex 51<br />
+                        1694 Orsonnens<br />
+                        Fribourg, Suisse<br />
+                    </div>
+
+			</div>
+                </div>
+		</article>
+{% endblock %}

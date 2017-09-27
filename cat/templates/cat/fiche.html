@@ -1,0 +1,34 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans 'Le Siberien' %}{% endblock %}
+
+{% block content %}
+<section>
+	<article class="container">
+
+		<div class="row">
+			<div class="col-xs-12">
+				<header><h2 class="pagetitle">{% trans 'Le Siberien' %}</h2></header>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+{% blocktrans %}
+<p>Nous nous sommes toujours dit qu'il était cher payé de mettre CHF 1'000 pour un chat quel que soit ses origines. Le chat Sibérien nous a fait changer notre point de vue de par sa prestence et son comportement. C'est un chat de grande taille caractérisé par sa robe à poil mi-long et sa silhouette dite "en tonneau".</p>
+
+<p>Il a été décrit pour la première fois en 1925, et sa domestication appartient encore à notre siècle. Il a par conséquent gardé son côté sauvage et chasseur tout en étant très docile et câlin.</p>
+<p>
+En ce qui concerne les origines, un petit flou persiste. Mais on pense que le Sibérien n'est rien d'autre qu'un croisement entre le chat domestique importé par les colons Russes en Sibérie et le chat sauvage des monts Oural et du plateau de Sibérie centrale. En Europe, cette race a été découverte récemment.
+    </p>
+<p>
+L'une des caractéristiques principales du chat de Sibérie est son côté hypoallergène. En effet, on considère que 85% des personnes allergiques aux chats le sont dû leur salive. Le chat de Sibérie ne fabriquant pas ou très peu la protéine FEL D1, il pourrait tout à fait convenir à des personnes allergiques aux chats.</p>
+</p>
+{% endblocktrans %}
+                </div>
+            </div>
+                </article>
+    </section>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans 'Nos chats de Sibérie' %}{% endblock %}
+
+{% block content %}
+
+        <article class="puppies">
+		        <div class="container">
+			        <div class="row">
+				        <div class="col-xs-12"><h2>{% trans 'Nos chats de Sibérie' %}</h2></div>
+			        </div>
+			
+                   {% if cats %}
+			        <div class="row">
+				        <div class="col-xs-12">
+					        <ul class="filters">
+						        <li data-filter="all" class="active">{% trans 'Tous' %}</li>
+						        <li data-filter="sale">{% trans 'À vendre' %}</li>
+                                <li data-filter="jut">{% trans 'Saillie' %}</li>
+						        <li data-filter="m">{% trans 'Male' %}</li>
+						        <li data-filter="f">{% trans 'Femelle' %}</li>
+					        </ul>
+				        </div>
+			        </div>
+                    			<div class="row">
+				<div class="col-md-12">
+					<div class="grid">
+						<ul>
+                            {% for cat in cats %}
+							    <li class="{{ cat.sex }} pull-left{% if cat.for_jut %} jut{% endif %}">
+								    <a href="{% url 'cats:details' cat.slug %}" title="Coeur-de-Sibérie - {{ cat.name }}">
+									    <div class="more">
+										    <i class="icon-search pull-right"></i>
+										    {% if cat.for_sale %}<span class="price">{{ cat.sale_price }}</span>{% endif %}
+										    <span class="wks">{{ cat.birthday }}</span>
+										    {% if cat.for_jut %}<span class="txt">{% trans 'Saillie dispo' %}</span>{% endif %}
+									    </div>
+                                        {% if cat.for_sale %}<span class="tag sale"><span>CHF</span></span>
+                                        {% elif cat.for_jut %}<span class="tag jut"><span>S</span></span>{% endif %}
+                                        {% for picture in cat.cats.all %}
+                                            {% if forloop.first %}
+									            <img src="{{ picture.image.url }}" alt="Coeur-de-Sibérie - {{ cat.name }}">
+                                            {% endif %}
+                                        {% endfor %}
+									    <span class="name">{{ cat.name }}</span>
+								    </a>
+							    </li>
+                                {% endfor %}
+                            </ul>
+					</div>
+				</div>
+			 </div>
+            {% else %}
+                <p>{% trans 'Nos chats ne sont pas encore référencés.' %}</p>
+            {% endif %}
+		</div>     
+		</article>
+
+{% endblock %}

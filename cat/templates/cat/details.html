@@ -1,0 +1,104 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+
+{% block page_title %}{{ cat.name }}{% endblock %}
+
+
+{% block content %}
+<section id="spuppie">
+	
+	<!-- begin Our Puppies -->
+	<article>
+	<div class="container">
+
+		<div class="row">
+			<div class="col-xs-12"><h2 class="header">{% trans 'Nos chats de Sibérie' %}</h2></div>
+		</div>
+
+		<div class="row">
+			<div class="title">
+				<div class="centered"><div><h2>{{ cat.name }}</h2></div></div>
+                <p>
+                    {% blocktrans with sex=cat.get_sex_display color=cat.color birthday=cat.birthday %}
+                        {{ sex }} de couleur {{ color }} né le {{ birthday }}
+                    {% endblocktrans %}{% if cat.previous_jut_birth %} {% trans 'd\'une précédente saillie' %}{% endif %}.
+                </p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-9">
+				<div id="carousel-puppie" class="carousel slide" data-ride="carousel" data-interval="false">
+
+					<!-- Wrapper for slides -->
+					<div class="carousel-inner">
+                        {% for picture in cat.cats.all %}
+						<div class="item{% if forloop.first %} active{% endif %}">
+							<img src="{{ picture.image.url }}" alt="Coeur-de-Siberie - {{ cat.name }}">
+						</div>
+                        {% endfor %}
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-12">
+					
+				<p>{{ cat.informations }}</p>
+				<ul class="features">
+					<li><strong>N° LOS:</strong>{{ cat.los_number }}</li>
+					<li><strong>{% trans 'Reproducteur' %}:</strong>{{ cat.parent_m }}</li>
+					<li><strong>{% trans 'Reproductrice' %}:</strong>{{ cat.parent_f }}</li>
+                    {% if cat.for_sale %}
+					<li><strong>{% trans 'Prix' %}:</strong><span class="price">CHF {{ cat.sale_price }}</span></li>
+                    {% endif %}
+                    {% if cat.for_jut %}
+                    <li><strong>{% trans 'Disponible à la saillie' %}:</strong><span class="price">CHF {{ cat.jut_price }}</span></li>
+                    {% endif %}
+				</ul>
+				
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-12">
+
+				<div id="carousel-thumb-puppie" class="carousel slide" data-ride="carousel" data-interval="false">
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<ol>
+                            {% for picture in cat.cats.all %}
+							    <li data-target="#carousel-puppie" data-slide-to="{{ picture.pk }}" class="{% if forloop.first %}active {% endif %}thumb"><img src="{{ picture.image.url }}" alt="Coeur-de-Siberie - {{ cat.name }}"></li>
+                            {% endfor %}
+						</ol>
+					</div>
+					<div class="item">
+						<ol>
+							{% for picture in cat.cats.all %}
+							    <li data-target="#carousel-puppie" data-slide-to="{{ picture.pk }}" class="{% if forloop.first %}active {% endif %}thumb"><img src="{{ picture.image.url }}" alt="Coeur-de-Siberie - {{ cat.name }}"></li>
+                            {% endfor %}
+						</ol>
+					</div>
+				</div>
+
+				<!-- Controls -->
+				<div class="controls">
+					<a class="left carousel-control" href="#carousel-thumb-puppie" data-slide="prev">
+						<i class="icon-left-open"></i>
+					</a>
+					<span clasS="more-img">{% trans 'Voir d\'autres images' %}</span>
+					<a class="right carousel-control" href="#carousel-thumb-puppie" data-slide="next">
+						<i class="icon-right-open"></i>
+					</a>
+				</div>
+				</div>
+
+				</div>
+				</div>
+				
+			</div>
+		 </div>
+	</div>
+	</article>
+    </section>
+
+{% endblock %}

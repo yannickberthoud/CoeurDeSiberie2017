@@ -1,0 +1,39 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}{% load static %}
+
+{% block page_title %}{% trans 'Accueil' %}{% endblock %}
+
+{% block content %}
+<article class="services">
+			<div class="container">
+			
+				<div class="row">
+					<div class="col-xs-12"><h2 class="header">{% trans 'Accueil' %}</h2></div>
+				</div>
+				
+
+				<div class="row service first">
+					<div class="col-md-7">
+						<h2>{% trans 'Chats' %}</h2>
+						<p>{% blocktrans %}Concernant les chats, c'est grâce à un ami que nous avons connu le chat Sibérien. Leurs instincts de chasse et leurs habitudes à sauter sont remarquables. Une race extraordinaire de par leur comportement mais également leurs couleurs. Ils dégagent une force tranquille tout en étant doté d'une grande vivacité. Les chats de Sibérie sont tout à fait capables de vivre en parfaite harmonie avec des enfants ou des chiens.
+Un point important est à relever à son sujet. Le Sibérien se dit hypoallergénique. Selon les statistiques, 85% des allergiques aux chats le sont à cause de leur salive. Celle-ci est déposée lors de sa toilette sur sa fourrure. Ces personnes sont allergiques à la protéine FEL D1. Le Sibérien ne produit pas, ou très peu de cette protéine. Ce qui fait de lui un chat qui pourrait convenir à des gens allergiques aux chats.{% endblocktrans %}</p>
+					</div>
+					<div class="col-md-5">
+						<img src="{% static 'img/home/chat.jpg' %}" alt="Coeur-de-Siberie - {% trans 'Nos chats de Siberie' %}" />
+					</div>
+				</div>
+				<div class="row service">
+					<div class="col-md-12 visible-xs visible-sm">
+						<h2>{% trans 'Serpent' %}</h2>
+					</div>
+					<div class="col-md-5"><img src="{% static 'img/home/potion.jpg' %}" alt="Coeur-de-Siberie - {% trans 'Nos serpents' %}" /></div>
+					<div class="col-md-7">
+						<h2 class="visible-md visible-lg">{% trans 'Serpents' %}</h2>
+						<p>{% blocktrans %}Nous avons acquis nos premiers serpents à l'actuelle bourse de Belfaux / FR (anciennement Givisiez / FR). C'était un couple de panthérophis Guttatus dit "serpent des blés". Par la suite, nous avons maintenu différentes espèces telles que les pythons regius,thamnophis, beauté bleue du Vietnam, orthriophis taeniura ridleyi, lampropeltis (getulus nigritus, getula splendida, campbelli, mexicana thayeri, pyromelana knoblochi), lamprophis, heterodon nasicus, coelognathus helena, etc.{% endblocktrans %}</p>
+					</div>
+				</div>
+
+			</div>
+		</article>
+
+{% endblock %}

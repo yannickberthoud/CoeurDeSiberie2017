@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load family_loader %}
+
+{% block page_title %}{% trans 'Nos serpents' %}{% endblock %}
+
+{% block content %}
+
+        <article class="puppies">
+		        <div class="container">
+			        <div class="row">
+				        <div class="col-xs-12"><h2>{% trans 'Nos serpents' %}</h2></div>
+			        </div>
+			
+                   {% if snakes %}
+			        <div class="row">
+				        <div class="col-xs-12">
+					        <ul class="filters">
+						        <li data-filter="all" class="active">{% trans 'Tous' %}</li>
+						        <li data-filter="sale">{% trans 'A vendre' %}</li>
+                                {% family %}
+					        </ul>
+				        </div>
+			        </div>
+                    			<div class="row">
+				<div class="col-md-12">
+					<div class="grid">
+						<ul>
+                            {% for snake in snakes %}
+							    <li class="{{ snake.family.name }}{% if snake.for_sale %} sale{% endif %} pull-left">
+								    <a href="{% url 'snakes:details' snake.slug snake.pk %}" title="Coeur-de-Siberie - {{ snake.family.name }}: {{ snake.s_name }} {{ snake.mutation }}">
+									    <div class="more">
+										    <i class="icon-search pull-right"></i>
+										    {% if snake.for_sale %}<span class="price">{{ snake.sale_price }}</span>{% endif %}
+										    <span class="wks">{{ snake.birthday }}</span>
+										    <span class="txt">{{ snake.c_name }}</span>
+									    </div>
+                                        {% if snake.for_sale %}<span class="tag sale"><span>CHF</span></span>{% endif %}
+                                        {% for picture in snake.snakesg.all %}
+                                            {% if forloop.first %}
+                                                <img src="{{ picture.image.url }}" alt="Coeur-de-Siberie - {{ snake.family.name }}: {{ snake.s_name }} {{ snake.mutation }}" />
+                                            {% endif %}
+                                        {% endfor %}
+									    <span class="name">{{ snake.s_name }}</span>
+								    </a>
+							    </li>
+                                {% endfor %}
+                            </ul>
+					</div>
+				</div>
+			 </div>
+            {% else %}
+                <p>{% trans 'Nos serpents ne sont pas encore r&eaigue;f&eaigue;renc&eaigues.' %}</p>
+            {% endif %}
+		</div>     
+		</article>
+
+{% endblock %}

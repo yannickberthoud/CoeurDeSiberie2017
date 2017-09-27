@@ -1,0 +1,47 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+{% block page_title %}{% trans 'La saillie' %}{% endblock %}
+
+{% block content %}
+<section>
+	<article class="container">
+
+		<div class="row">
+			<div class="col-xs-12">
+				<header><h2 class="pagetitle">{% trans 'La saillie' %}</h2></header>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+{% blocktrans %}
+<p>Nous mettons à votre disposition notre mâle dans le but de pouvoir procéder à une saillie. Voici notre méthode:</p>
+
+<h2>Phase 1: vérification du pédigrée</h2>
+<p>Afin d'assurer la non-consanguinité de nos chats respectifs, nous vous demandons une copie de son pédigrée,ainsi que son carnet de vaccination à jour.</p>
+
+<h2>Phase 2: prise de contact</h2>
+<p>Nous convenons ensemble d'un rendez-vous approximatif selon le déclenchement des chaleurs de votre protégée.</p>
+
+<h2>Phase 3: rencontre des félins</h2>
+<p>La chatte est amenée au mâle. C'est également là que le prix de la saillie est versé. Si vôtre animal a des habitudes alimentaires spécifiques, veillez à nous fournir ce qu'il faut.</p>
+
+<h2>Phase 4: la reproduction</h2>
+<p>La femelle reste une semaine auprès du mâle. La saillie se déroule sur un balcon de 21m3 totalement sécurisé et isolé des autres chats.</p>
+
+<h2>Phase 5.1: le retour, votre chatte a été prise</h2>
+<p>La semaine écoulée, vous aurez la possibilité de venir récupérer votre chatte. Si cette dernière n'a plus de chaleurs, alors on peut considérer que la saillie a fonctionné. Nous vous invitons donc à prendre rendez-vous chez votre vétérinaire afin de faire une écographie. Félicitations !</p>
+
+<h2>Phase 5.2: le retour, votre chatte n'a pas été prise</h2>
+<p>En cas de retour des chaleurs, votre chatte n'a pas été prise. C'est gratuitement que nous accueillerons une seconde fois votre chat de Sibérie afin de retenter l'expérience.</p>
+
+<h2>Informations complémentaires</h2>
+<p>Il est important de souligner que notre mâle est testé négatif au typhus, leucose, corrisa. Par conséquent, nous en attendons autant de votre femelle. Nous serions également enchantés d'avoir de vos nouvelles et si vous le désirez, nous mettrons des photos de la portée sur notre site. </p>
+{% endblocktrans %}
+                </div>
+            </div>
+                </article>
+    </section>
+
+{% endblock %}
