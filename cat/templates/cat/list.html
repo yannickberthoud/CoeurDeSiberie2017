@@ -29,7 +29,7 @@
 					<div class="grid">
 						<ul>
                             {% for cat in cats %}
-							    <li class="{{ cat.sex }} pull-left{% if cat.for_jut %} jut{% endif %}{% if previous_jut_birth %} r{% endif %}">
+							    <li class="{{ cat.sex }} pull-left{% if cat.for_jut %} jut{% endif %}{% if cat.previous_jut_birth %} r{% endif %}">
 								    <a href="{% url 'cats:details' cat.slug %}" title="Coeur-de-Sibérie - {{ cat.name }}">
 									    <div class="more">
 										    <i class="icon-search pull-right"></i>
