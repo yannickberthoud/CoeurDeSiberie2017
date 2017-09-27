@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>CoeurDeSiberie</Name>
+    <RootNamespace>CoeurDeSiberie</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>a3b954df-54a6-4ed0-93c1-8a5ad96e55c5</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>CoeurDeSiberie.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="cat\admin.py" />
+    <Compile Include="cat\apps.py" />
+    <Compile Include="cat\migrations\__init__.py" />
+    <Compile Include="cat\models.py" />
+    <Compile Include="cat\tests.py" />
+    <Compile Include="cat\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="cat\views.py" />
+    <Compile Include="cat\__init__.py" />
+    <Compile Include="CoeurDeSiberie\views.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="manage.py" />
+    <Compile Include="CoeurDeSiberie\__init__.py" />
+    <Compile Include="CoeurDeSiberie\settings.py" />
+    <Compile Include="CoeurDeSiberie\urls.py" />
+    <Compile Include="CoeurDeSiberie\wsgi.py" />
+    <Compile Include="snake\admin.py" />
+    <Compile Include="snake\apps.py" />
+    <Compile Include="snake\migrations\__init__.py" />
+    <Compile Include="snake\models.py" />
+    <Compile Include="snake\templatetags\family_loader.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="snake\templatetags\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="snake\tests.py" />
+    <Compile Include="snake\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="snake\views.py" />
+    <Compile Include="snake\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="cat\" />
+    <Folder Include="cat\migrations\" />
+    <Folder Include="cat\templates\" />
+    <Folder Include="cat\templates\cat\" />
+    <Folder Include="CoeurDeSiberie\" />
+    <Folder Include="snake\" />
+    <Folder Include="snake\migrations\" />
+    <Folder Include="snake\templates\snake\templatetags\" />
+    <Folder Include="snake\templatetags\" />
+    <Folder Include="snake\templates\" />
+    <Folder Include="snake\templates\snake\" />
+    <Folder Include="static\font\" />
+    <Folder Include="static\img\home\" />
+    <Folder Include="templates\" />
+    <Folder Include="static\" />
+    <Folder Include="static\css\" />
+    <Folder Include="static\img\" />
+    <Folder Include="static\js\" />
+    <Folder Include="static\plugins\" />
+    <Folder Include="static\plugins\grid\" />
+    <Folder Include="static\plugins\grid\css\" />
+    <Folder Include="static\plugins\grid\js\" />
+    <Folder Include="static\plugins\revolution\" />
+    <Folder Include="static\plugins\revolution\css\" />
+    <Folder Include="static\plugins\revolution\js\" />
+    <Folder Include="templates\CoeurDeSiberie\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cat\templates\cat\details.html" />
+    <Content Include="cat\templates\cat\fiche.html" />
+    <Content Include="cat\templates\cat\list.html" />
+    <Content Include="cat\templates\cat\jut.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="snake\templates\snake\list.html" />
+    <Content Include="snake\templates\snake\details.html" />
+    <Content Include="snake\templates\snake\templatetags\filter.html" />
+    <Content Include="static\css\bootstrap.min.css" />
+    <Content Include="static\css\fontello.css" />
+    <Content Include="static\css\media-queries.css" />
+    <Content Include="static\css\style.css" />
+    <Content Include="static\font\fontello.eot" />
+    <Content Include="static\font\fontello.ttf" />
+    <Content Include="static\font\fontello.woff" />
+    <Content Include="static\img\home\chat.jpg" />
+    <Content Include="static\img\home\potion.JPG" />
+    <Content Include="static\img\logo.png" />
+    <Content Include="static\img\to-top.png" />
+    <Content Include="static\js\bootstrap.min.js" />
+    <Content Include="static\js\gmaps.js" />
+    <Content Include="static\js\jquery-1.9.1.min.js" />
+    <Content Include="static\js\jquery.blockUI.js" />
+    <Content Include="static\js\jquery.scrollTo-1.4.3.1-min.js" />
+    <Content Include="static\js\placeholder.js" />
+    <Content Include="static\js\respond.min.js" />
+    <Content Include="static\js\script.js" />
+    <Content Include="static\plugins\grid\css\component.css" />
+    <Content Include="static\plugins\grid\js\classie.js" />
+    <Content Include="static\plugins\grid\js\modernizr.custom.js" />
+    <Content Include="static\plugins\grid\js\thumbnailGridEffects.js" />
+    <Content Include="static\plugins\revolution\css\settings.css" />
+    <Content Include="static\plugins\revolution\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="static\plugins\revolution\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="templates\base.html" />
+    <Content Include="templates\CoeurDeSiberie\contact.html" />
+    <Content Include="templates\CoeurDeSiberie\home.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.6</Version>
+      <Description>env (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
