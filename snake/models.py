@@ -39,7 +39,7 @@ class Snake(models.Model):
     family = models.ForeignKey(Family, on_delete = models.CASCADE, verbose_name = "Famille")
     s_name = models.CharField(max_length = 256, verbose_name = "Nom scientifique")
     c_name = models.CharField(max_length = 256, verbose_name = "Nom commun")
-    birthday = models.DateField(verbose_name = "Né le")
+    birthday = models.CharField(max_length = 10, verbose_name = "Né le")
     mutation = models.ForeignKey(Mutation, on_delete = models.CASCADE)
     sex = models.CharField(max_length = 1, verbose_name = "Sexe", choices = SEX_CHOICES)
     slug = models.SlugField()

@@ -28,10 +28,10 @@ class Cat(models.Model):
 
     color = models.ForeignKey(Color, on_delete = models.CASCADE, verbose_name = "Couleur")
     sex = models.CharField(max_length = 1, verbose_name = "Sexe", choices = SEX_CHOICES)
-    birthday = models.DateField(verbose_name = "Né le")
+    birthday = models.CharField(max_length = 10, verbose_name = "Né le")
 
     for_sale = models.BooleanField(verbose_name = "À vendre", blank = True)
-    price_sale = models.FloatField(verbose_name = "Prix de vente", blank = True)
+    price_sale = models.FloatField(verbose_name = "Prix de vente", blank = True, null = True)
     for_jut = models.BooleanField(verbose_name = "Pour saillie", blank = True)
     jut_price = models.FloatField(verbose_name = "Prix de la saillie", blank = True)
 

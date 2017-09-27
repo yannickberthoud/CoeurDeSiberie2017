@@ -50,8 +50,8 @@
 					<li><strong>{% trans 'Reproducteur' %}:</strong>{{ snake.parent_m|default:"Inconnu" }}</li>
 					<li><strong>{% trans 'Reproductrice' %}:</strong>{{ snake.parent_f|default:"Inconnu" }}</li>
                     {% if snake.for_sale %}
-					    <li><strong>{% trans 'Prix' %}:</strong><span class="price">CHF {{ snake.sale_price|default:"0.00" }}</span></li>
-                        <li><strong>{% trans 'Prix de couple' %}:</strong><span class="price">CHF {{ snake.price_cpl|default:"0.00" }}</span></li>
+					    <li><strong>{% trans 'Prix' %}:</strong><span class="price">CHF {{ snake.sale_price }}</span></li>
+                        {% if snake.price_cpl %}<li><strong>{% trans 'Prix de couple' %}:</strong><span class="price">CHF {{ snake.price_cpl }}</span></li> {% endif %}
                         {% if snake.flex_price %}<li><strong>{% trans 'Prix négociable!' %}</strong></li>{% endif %}
                     {% endif %}
 				</ul>
