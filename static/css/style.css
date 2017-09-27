@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 
 
 /* ============================== */
@@ -81,6 +81,7 @@ blockquote {
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 17px;
+    text-align: justify;
 }
 
 h1,
