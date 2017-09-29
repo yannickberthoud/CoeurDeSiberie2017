@@ -1,6 +1,6 @@
 /*!
  * GMaps.js v0.3.3
- * http://hpneo.github.com/gmaps/
+ * https://hpneo.github.com/gmaps/
  *
  * Copyright 2012, Gustavo Leon
  * Released under the MIT License.
@@ -1554,7 +1554,7 @@ if(window.google && window.google.maps){
       var parameters = [];
       var data;
 
-      var static_root = 'http://maps.googleapis.com/maps/api/staticmap';
+      var static_root = 'https://maps.googleapis.com/maps/api/staticmap';
       if (options.url){
         static_root = options.url;
         delete options.url;
@@ -1762,7 +1762,7 @@ if(window.google && window.google.maps){
     // Polygon containsLatLng
     // https://github.com/tparkin/Google-Maps-Point-in-Polygon
     // Poygon getBounds extension - google-maps-extensions
-    // http://code.google.com/p/google-maps-extensions/source/browse/google.maps.Polygon.getBounds.js
+    // https://code.google.com/p/google-maps-extensions/source/browse/google.maps.Polygon.getBounds.js
     if (!google.maps.Polygon.prototype.getBounds) {
       google.maps.Polygon.prototype.getBounds = function(latLng) {
         var bounds = new google.maps.LatLngBounds();
@@ -1915,5 +1915,5 @@ if(window.google && window.google.maps){
 }
 
 else {
-  throw 'Google Maps API is required. Please register the following JavaScript library http://maps.google.com/maps/api/js?sensor=true.'
+  throw 'Google Maps API is required. Please register the following JavaScript library https://maps.google.com/maps/api/js?sensor=true.'
 }

@@ -32,8 +32,8 @@ class SnakeAdmin(admin.ModelAdmin):
     ]
     inlines = [PhotoInline]
     list_filter = ['family', 'sex', 'for_sale']
-    list_display = ('id', 'family', 'parent_m', 'parent_f', 's_name','c_name', 'sex', 'captive_birth', 'cites', 'for_sale', 'price_sale', 'price_cpl', 'flex_price')
-    search_fields = ['id', 'parent_m', 'parent_f', 'family', 's_name', 'c_name']
+    list_display = ('id', 'family', 'mutation', 's_name', 'sex', 'birthday', 'captive_birth', 'for_sale', 'price_sale', 'price_cpl')
+    search_fields = ['id', 'mutation', 'family', 's_name', 'c_name']
     ordering = ['s_name']
 
 
